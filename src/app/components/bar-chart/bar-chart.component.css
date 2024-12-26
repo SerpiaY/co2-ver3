@@ -1,0 +1,26 @@
+.bar-chart-container {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.chart-wrapper {
+  width: 100%;
+  max-width: 100%; /* Adjust the width */
+  height: 100%; /* Increase height to accommodate long lists of countries */
+  margin: 20px auto;
+}
+
+.canvas {
+  display: block;
+  width: 100%; /* Scale the canvas to fill the container */
+  height: 100%; /* Ensure it uses all available height */
+}
+
+.analysis {
+  margin-top: 20px;
+  font-size: 1.2em; /* Slightly larger font for readability */
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+}

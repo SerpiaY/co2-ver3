@@ -1,0 +1,29 @@
+<div class="chart-container">
+  <div class="interactive-area">
+    <label for="metricDropdown">Metric:</label>
+    <select id="metricDropdown" [(ngModel)]="metric" [disabled]="selectedCountries.length === 1" (change)="onMetricChange()">
+      <option value="Emissions_by_country">Emissions by Country</option>
+      <option value="Emissions_per_capita_by_country">Emissions per Capita</option>
+      <option value="Emissions_per_gdp_by_country">Emissions per GDP</option>
+    </select>
+
+    <label for="continentDropdown">Select Continents:</label>
+    <select id="continentDropdown" [(ngModel)]="selectedContinents" multiple (change)="onContinentSelectionChange()">
+      <option *ngFor="let continent of continents" [value]="continent">
+        {{ continent }}
+      </option>
+    </select>
+
+    <label for="countryDropdown">Select Countries:</label>
+    <select id="countryDropdown" [(ngModel)]="selectedCountries" multiple (change)="onCountrySelectionChange()">
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
+    </select>
+
+    <label for="countrySearch">Search Country:</label>
+    <input id="countrySearch" [(ngModel)]="searchQuery" (input)="onSearchChange()" type="text" placeholder="Search by country" />
+  </div>
+
+  <canvas id="lineChart"></canvas>
+</div>

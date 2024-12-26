@@ -1,0 +1,17 @@
+<div class="controls">
+  <label for="year-select">Select Year:</label>
+  <select id="year-select" [(ngModel)]="selectedYear" (change)="onYearChange($event)">
+    <option *ngFor="let year of availableYears" [value]="year">{{ year }}</option>
+  </select>
+
+  <label for="metric-select">Select Metric:</label>
+  <select id="metric-select" [(ngModel)]="selectedMetric" (change)="onMetricChange($event)">
+    <option *ngFor="let metric of metrics" [value]="metric">{{ metric }}</option>
+  </select>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<body>
+  <div id="map"></div>
+</body>
+

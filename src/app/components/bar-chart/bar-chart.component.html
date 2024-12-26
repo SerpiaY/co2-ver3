@@ -1,0 +1,39 @@
+<div class="bar-chart-container">
+  <h2>CO2 Emissions Comparison</h2>
+
+  <!-- Dropdown for selecting metric -->
+  <label for="metric-select">Metric:</label>
+  <select id="metric-select" [(ngModel)]="selectedMetric" (change)="updateChart()">
+    <option value="Emissions_per_capita_by_country">Emissions Per Capita</option>
+    <option value="Emissions_by_country">Total Emissions</option>
+    <option value="Emissions_per_gdp_by_country">Emissions Per GDP</option>
+  </select>
+
+  <!-- Slider for selecting year -->
+  <label for="year-slider">Year:</label>
+  <input
+    id="year-slider"
+    type="range"
+    min="1970"
+    max="2023"
+    [(ngModel)]="selectedYear"
+    (change)="updateChart()"
+  />
+  <span>{{ selectedYear }}</span>
+
+  <label for="continent-select">Continent:</label>
+  <select id="continent-select" [(ngModel)]="selectedContinent" (change)="updateChart()">
+    <option *ngFor="let continent of continents" [value]="continent">{{ continent }}</option>
+  </select>
+
+
+  <!-- Bar chart canvas -->
+  <div class="chart-wrapper">
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <!-- Analysis description -->
+  <div class="analysis">
+    <p>{{ analysisDescription }}</p>
+  </div>
+</div>

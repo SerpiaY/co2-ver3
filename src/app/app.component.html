@@ -1,0 +1,20 @@
+<mat-drawer-container class="xxx h-80 w-full bg-teal-900">
+      <mat-drawer mode="side" opened class="w-5/16">
+          <div class="w-full h-full bg-teal-900 flex flex-col justify-start">
+              <div flex flex-row>
+                  <a routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page" class="h-20 text-cyan-50 decoration-sky-600 text-pretty font-serif">Home Page</a>
+              </div>
+              <ul>
+                  <li class="text-zinc-100 h-20 text-pretty font-serif py-8"><a routerLink="/line-chart" routerLinkActive="active" ariaCurrentWhenActive="page">Line Chart</a></li>
+                  <li class="text-zinc-100 h-20 text-pretty font-serif py-8"><a routerLink="/bar-chart" routerLinkActive="active" ariaCurrentWhenActive="page">Bar Chart</a></li>
+                  <li class="text-zinc-100 h-20 text-pretty font-serif py-8"><a routerLink="/map-chart" routerLinkActive="active" ariaCurrentWhenActive="page">Choropleth Map</a></li>
+              </ul>
+          </div>
+          
+      </mat-drawer>
+      <mat-drawer-content class="w-11/16 bg-zinc-100">
+          <router-outlet></router-outlet>
+      </mat-drawer-content>
+  </mat-drawer-container>
+
+  
